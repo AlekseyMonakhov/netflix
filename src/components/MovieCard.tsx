@@ -9,6 +9,7 @@ import {BiChevronDown} from 'react-icons/bi'
 
 interface MovieCardProps {
     data: Movie,
+
 }
 
 const MovieCard: FC<MovieCardProps> = ({ data }) => {
