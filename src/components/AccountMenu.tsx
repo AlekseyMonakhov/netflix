@@ -2,10 +2,11 @@ import { FC } from 'react';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import useCurrentUser from '../../hooks/useCurrentUser';
 
 
 const AccountMenu: FC = () => {
-
+    const {data} = useCurrentUser();
 
     return (
         <motion.div
@@ -21,7 +22,7 @@ const AccountMenu: FC = () => {
                 <div className={'px-3 group/item flex flex-row gap-3 items-center w-full'}>
                     <Image src={'/images/default-blue.png'} alt={'logo'} width={24} height={24} />
                     <p className={'text-white text-sm group-hover/item:underline'}>
-                        Username
+                        {data?.name}
                     </p>
                 </div>
                 <hr className={'bg-gray-600 border-0 h-px my-4'} />

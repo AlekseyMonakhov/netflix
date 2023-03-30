@@ -6,7 +6,7 @@ import axios from 'axios';
 import { User } from '@prisma/client';
 
 interface FavoriteButtonProps {
-    movieId: string;
+    movieId: string | undefined;
 }
 
 const FavoriteButton: FC<FavoriteButtonProps> = ({ movieId }) => {
@@ -17,7 +17,7 @@ const FavoriteButton: FC<FavoriteButtonProps> = ({ movieId }) => {
     const isFavorite = () => {
         const list = currentUser?.favoriteIds || [];
 
-        return list.includes(movieId);
+        return list.includes(movieId!);
     };
 
 
