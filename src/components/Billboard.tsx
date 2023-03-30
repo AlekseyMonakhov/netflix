@@ -15,9 +15,9 @@ const Billboard: FC = () => {
 
 
     return (
-        <div className={'relative h-[56.25vw]'}>
+        <div className={'relative h-[100vw] sm:h-[56.25vw]'}>
             <video
-                className={'w-full object-cover brightness-[60%] h-[56.25vw]'}
+                className={'w-full object-cover brightness-[60%] h-full sm:h-[56.25vw]'}
                 autoPlay
                 muted
                 loop
@@ -26,7 +26,7 @@ const Billboard: FC = () => {
             >
 
             </video>
-            <div className={'absolute top-[30%] md:top-[40%] ml-4 md:ml-16'}>
+            <div className={'absolute top-[45%] md:top-[40%] ml-4 md:ml-16'}>
                 <h1 className={'text-white text-1xl md:text-5xl h-full w-[50%] lg:text-6xl font-bold drop-shadow-xl'}>
                     {data?.title}
                 </h1>

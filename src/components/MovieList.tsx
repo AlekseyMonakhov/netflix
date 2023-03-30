@@ -20,7 +20,7 @@ const MovieList: FC<MovieListProps> = ({ title, data }) => {
                 <h4 className={'text-white text-md md:text-xl lg:text-2xl font-semibold mb-4'}>
                     {title}
                 </h4>
-                <div className={'grid grid-cols-4 gap-2'}>
+                <div className={'grid sm:grid-cols-4 gap-2'}>
                     {data?.map((movie) =>
                         (<MovieCard key={movie.id} data={movie}/>))
                     }
