@@ -7,6 +7,7 @@ import useMovieList from '../../hooks/useMovieList';
 import useFavorites from '../../hooks/useFavorites';
 import InfoModal from '@/components/InfoModal';
 import useInfoModal from '../../hooks/useInfoModal';
+import ModalPortal from '@/components/ModalPortal';
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     const session = await getSession({ req });
@@ -26,13 +27,15 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 };
 
 export default function Home() {
-    const { data: movies} = useMovieList();
-    const { data: favorites, isLoading, error} = useFavorites();
-    const {closeModal, isOpen} = useInfoModal();
+    const { data: movies } = useMovieList();
+    const { data: favorites, isLoading, error } = useFavorites();
+    const { closeModal, isOpen } = useInfoModal();
 
     return (
         <>
-            <InfoModal visible={isOpen} onClose={closeModal}/>
+            <ModalPortal>
+                <InfoModal visible={isOpen} onClose={closeModal} />
+            </ModalPortal>
             <Navbar />
             <Billboard />
             <div className={'pb-40'}>
