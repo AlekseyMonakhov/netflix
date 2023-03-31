@@ -70,7 +70,7 @@ const Auth = () => {
                     redirect: false,
                 });
                 if (result?.ok) {
-                    router.push('/profiles');
+                    await router.push('/profiles');
                 } else {
                     throw result;
                 }
@@ -96,7 +96,7 @@ const Auth = () => {
                 });
 
                 if (result?.ok) {
-                    router.push('profiles');
+                    await router.push('profiles');
                 } else {
                     throw result;
                 }
